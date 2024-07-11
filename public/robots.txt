@@ -1,0 +1,17 @@
+# *
+User-agent: *
+Allow: /
+
+# Googlebot
+User-agent: Googlebot
+Allow: /
+
+# *
+User-agent: *
+Disallow: /secret-page
+
+# Host
+Host: https://baobabdevelopmentsolutions.com
+
+# Sitemaps
+Sitemap: https://baobabdevelopmentsolutions.com/sitemap.xml
