@@ -1,0 +1,21 @@
+.autogrid {
+    --auto-grid-min-size: 20rem;
+    
+    display: grid;
+    grid-template-columns: 400px 400px;
+    grid-gap: 1rem;
+  }
+  
+  
+  .autogrid > li {
+    padding: 5rem 1rem;
+    text-align: center;
+    font-size: 1.2rem;
+    background: #BC7B4C;
+  }
+
+  .imageStyle {
+    padding-top: px;
+    height: 179px;
+
+  }
