@@ -1,79 +1,38 @@
 'use client';
 
-import { useState,useEffect } from 'react';
-import { useSpring} from 'react-spring';
-
+import React from 'react';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
-import { motion, useAnimation } from 'framer-motion';
-import { useInView } from 'react-intersection-observer';
-import styles from './styles/Awards.module.css'; // Import the CSS module
-
-
-
-interface Award {
-  image: string;
-  title: string;
-}
-
-
-const awards: Award[] = [
-  {
-      image: "/images/image002.png",
-      title: "award 1"
-    },
-
-    {
-      image: "/images/image003.png",
-      title: "award 2"
-
-    },
-    
-];
-
-
+import award1 from '../../public/images/image002.png';
+import award2 from '../../public/images/image003.png';
+import styles from './styles/Awards.module.css';
 const Awards: React.FC = () => {
   return (
-    <section id="courses" className={`${styles.coursesSection} py-5`}>
-      <div className={`${styles.coursesContainer} container mx-auto max-w-7xl px-4 h-full`}>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 h-full">
-          {awards.map((awards, index) => (
-            <AwardCard key={index} awards={awards} index={index} />
-          ))}
+    <div>
+      <div className="container mx-auto text-center ">
+        <h2 className="text-3xl font-bold mb-5">Our Awards</h2>
+        <div className="w-full flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 pt-20">
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 2.5, duration: 1 }}
+            className={`z-10 flex justify-center shadow-xl`}
+          >
+            <Image id='award1' src={award1} alt="Award 1" width={400} height={200} />
+          </motion.div>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            initial={{ opacity: 0, scale: 0.5 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 3, duration: 1 }}
+            className={`z-10 flex justify-center shadow-xl`}
+          >
+            <Image id='award2' src={award2} alt="Award 2" width={400} height={200} />
+          </motion.div>
         </div>
       </div>
-    </section>
-  );
-};
-
-const AwardCard: React.FC<{ awards: Award; index: number }> = ({ awards, index }) => {
-  const controls = useAnimation();
-  const [ref, inView] = useInView({ triggerOnce: true });
-
-  useEffect(() => {
-    if (inView) {
-      controls.start('visible');
-    }
-  }, [controls, inView]);
-
-  return (
-    <motion.div
-        whileHover={{ scale: 1.05 }}
-        className="bg-gradient-to-b from-[#751904] to-[#b44e0f] rounded-lg shadow-xl overflow-hidden flex flex-col h-full transform transition-transform duration-300"
-        style={{ perspective: 1000 }}
-      >
-        <Image 
-          src={awards.image} 
-          alt={awards.title}
-          className="w-full h-48 object-cover rounded-t-lg"
-          width={300}
-          height={200} 
-        />
-         
-          {/* <div className="mb-4">
-            <p className="text-gray-700">{course.subtitle}</p>
-          </div> */}
-       
-      </motion.div>
+    </div>
   );
 };
 

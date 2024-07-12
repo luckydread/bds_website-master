@@ -36,7 +36,7 @@ export default function ContactForm() {
               type="text"
               name="name"
               placeholder="Name"
-              className="px-4 py-3 bg-[#212529]  text-white w-full text-sm border rounded-xl transition-all"
+              className="px-4 py-3 bg-[#b44e0f]  text-white w-full text-sm border rounded-xl transition-all"
             />
           </div>
 
@@ -46,7 +46,7 @@ export default function ContactForm() {
               type="text"
               name="email"
               placeholder="Email"
-              className="px-4 py-3 bg-[#212529]  text-white w-full text-sm border rounded-xl transition-all"
+              className="px-4 py-3 bg-[#b44e0f]  text-white w-full text-sm border rounded-xl transition-all"
             />
           </div>
         </div>
@@ -57,7 +57,7 @@ export default function ContactForm() {
               name="message"
               placeholder="Message"
             
-              className="px-4 py-3 bg-[#212529]  text-white w-full h-[150px] text-sm border  rounded-xl transition-all"
+              className="px-4 py-3 bg-[#b44e0f]  text-white w-full h-[150px] text-sm border  rounded-xl transition-all"
             />
           </div>
         </div>
